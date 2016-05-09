@@ -1,0 +1,16 @@
+<div class="container">
+<div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+<p><%= notice %></p>
+<h1>お問い合わせ</h1>
+<%= link_to "作成する", new_contact_path, class: 'btn btn-default' %>
+<% @contacts.each do |contact| %>
+<div class="row">
+  <h4><strong>名前:<%= contact.name %></strong></h4>
+  <p>メールアドレス:<%= contact.email %></p>
+  <p>本文:<%= contact.content %></p>
+  <%= link_to "編集する", edit_contact_path(contact.id), data: { confirm: '本当に編集していいですか？' }, class: 'btn btn-default btn-sm btn-success' %>
+  <%= link_to "削除する", contact_path(contact.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn-success' %>
+ </div>
+<% end %>
+ </div>
+</div>
