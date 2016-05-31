@@ -3,21 +3,27 @@ ja:
   models:
    user: ユーザー
   attributes:
-   user:
-    id: ID
-    created_at: 登録日時
-    updated_at: 登録日時
-    bithday: 生年月日
-    emailsalon_id: サロン
-    password: パスワード
-    title: タイトル
-    name: 名前
-    email: メールアドレス
-    content: 内容
-    current_password: "現在のパスワード"
-    password: "パスワード"
-    password_confirmation: "確認用パスワード"
-    remember_me: "ログインを記憶"
+    user:
+      id: ID
+      created_at: 登録日時
+      updated_at: 登録日時
+      bithday: 生年月日
+      emailsalon_id: サロン
+      password: パスワード
+    contact:
+      title: タイトル
+      name: 名前
+      email: メールアドレス
+      content: 内容
+    blog:
+      title: タイトル
+      name: 名前
+      email: メールアドレス
+      content: 内容
+      current_password: "現在のパスワード"
+      password: "パスワード"
+      password_confirmation: "確認用パスワード"
+      remember_me: "ログインを記憶"
   activerecord:
     errors:
       messages:
