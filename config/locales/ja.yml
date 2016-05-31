@@ -10,6 +10,10 @@ ja:
       bithday: 生年月日
       emailsalon_id: サロン
       password: パスワード
+      current_password: "現在のパスワード"
+      password: "パスワード"
+      password_confirmation: "確認用パスワード"
+      remember_me: "ログインを記憶"
     contact:
       title: タイトル
       name: 名前
@@ -20,10 +24,6 @@ ja:
       name: 名前
       email: メールアドレス
       content: 内容
-      current_password: "現在のパスワード"
-      password: "パスワード"
-      password_confirmation: "確認用パスワード"
-      remember_me: "ログインを記憶"
   activerecord:
     errors:
       messages:
