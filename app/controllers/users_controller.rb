@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def show
-    @blogs = @user.blogs
+    @user = User.all
   end
+  
   
   def edit
   end
