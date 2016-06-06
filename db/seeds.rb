@@ -9,15 +9,17 @@
   email = Faker::Internet.email
   name = Faker::Name.name
   password = "password"
-  User.create!(email: email,
-               name: name,
-               password: password,
-               password_confirmation: password,
-               )
+  user = User.new(email: email,
+              name: name,
+              password: password,
+              password_confirmation: password)
+  user.skip_confirmation!
+  user.save
+  
   title = Faker::Book.title
   content =  Faker::Color.color_name
   Blog.create!(title: title,
                content: content,
                user_id: n + 1
-               )            
+               )
 end
