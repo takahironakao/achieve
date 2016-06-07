@@ -41,6 +41,4 @@ Rails.application.configure do
 config.action_mailer.delivery_method = :letter_opener
 config.action_mailer.default_url_options = { host: 'dive-into-code-saboten33-1.c9users.io/', port: $PORT, protocol: 'https' }
 
-config.action_mailer.delivery_method = :development
-config.action_mailer.default_url_options = { host: 'fathomless-tor-29250.herokuapp.com', port: $PORT, protocol: 'https' }
 end
