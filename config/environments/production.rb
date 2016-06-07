@@ -78,9 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   
 config.action_mailer.delivery_method = :smtp
-config.action_mailer.default_url_options = { host: 'fathomless-tor-29250.herokuapp.com', port: $PORT, protocol: 'https' }
-
-ActionMailer::Base.delivery_method = :smtp
+config.action_mailer.default_url_options = { host: 'https://fathomless-tor-29250.herokuapp.com'}
 ActionMailer::Base.smtp_settings =
 {
  user_name: ENV['SENDGRID_USERNAME'],
