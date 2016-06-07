@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   
-  ActionMailer::Base.default_url_options[:host] = "fathomless-tor-29250.herokuapp.com"
+  config.action_mailer.default_url_options = { host: 'fathomless-tor-29250.herokuapp.com' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.perform_deliveries = true
   ActionMailer::Base.smtp_settings = {
