@@ -51,3 +51,8 @@ gem 'twitter-bootstrap-rails'
 gem 'jquery-turbolinks'
 
 gem 'letter_opener_web', '~> 1.2.0', :group => :development
+
+gem 'therubyracer', platforms: :ruby
+gem 'rails_admin'
+
+gem 'cancan'
