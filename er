@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/ubuntu/workspace/achieve/app/helpers/application_helper.rb @ line 4 ApplicationHelper#profile_img:
+
+     [1;34m2[0m:   [32mdef[0m [1;34mprofile_img[0m(user)
+     [1;34m3[0m:     [32mreturn[0m image_tag(user.avatar, [35malt[0m: user.name) [32mif[0m user.avatar?
+ =>  [1;34m4[0m: binding.pry
+     [1;34m5[0m:     [32mif[0m user.provider
+     [1;34m6[0m:       img_url = user.image_url
+     [1;34m7[0m:     [32melse[0m
+     [1;34m8[0m:       img_url = [31m[1;31m'[0m[31mno_image.png[1;31m'[0m[31m[0m
+     [1;34m9[0m:       binding.pry
+    [1;34m10[0m:     [32mend[0m
+    [1;34m11[0m:     image_tag(img_url, [35malt[0m: user.name)
+    [1;34m12[0m:   [32mend[0m
+

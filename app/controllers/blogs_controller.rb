@@ -4,9 +4,8 @@ class BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
-    @user = User.all
   end
-
+ 
   def new
   if params[:back]
     @blog = Blog.new(blogs_params)
@@ -29,7 +28,7 @@ class BlogsController < ApplicationController
   def edit
     @blog = Blog.find(params[:id])
   end
-
+  
   def update
     @blog = Blog.find(params[:id])
     if @blog.update(blogs_params)
