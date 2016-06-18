@@ -27,7 +27,6 @@ class User < ActiveRecord::Base
     user = User.where(provider: auth.provider, uid: auth.uid).first
 
     unless user
-      binding.pry
       user = User.new(
           name:     auth.info.nickname,
           image_url: auth.info.image,
