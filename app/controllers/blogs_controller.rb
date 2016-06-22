@@ -5,6 +5,11 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
   end
+  
+  def show
+    @comment = @blog.comments.build
+    @comments = @blog.comments
+  end
  
   def new
   if params[:back]
