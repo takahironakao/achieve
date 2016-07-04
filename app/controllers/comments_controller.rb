@@ -1,10 +1,13 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+  after_action :sending_pusher, only: [:create]
+  
   def create
-  # ログインユーザーに紐付けてインスタンス生成するためbuildメソッドを使用します。
     @comment = current_user.comments.build(comment_params)
     @blog = @comment.blog
-
-    # クライアント要求に応じてフォーマットを変更
+    @notification = @comment.notifications.build(recipient_id: @blog.user_id, sender_id: current_user.id)
+    
+    
     respond_to do |format|
       if @comment.save
         format.html { redirect_to blog_path(blog), notice: 'コメントを投稿しました。' }
@@ -26,10 +29,12 @@ class CommentsController < ApplicationController
     format.js { render :index, notice: 'コメントを投稿しました。' }
   end
   end
+  
 
   private
     # ストロングパラメーター
     def comment_params
-      params.require(:comment).permit(:blog_id, :content)
+      params.require(:comment).permit(:blog_id, :user_id, :content)
     end
+    
 end

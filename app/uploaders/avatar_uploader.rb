@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class AvatarUploader < CarrierWave::Uploader::Base
+  include CarrierWave::RMagick
+  process resize_to_limit: [80, 60]
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick

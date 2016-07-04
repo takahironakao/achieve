@@ -48,6 +48,7 @@ group :development, :test do
   gem 'dotenv-rails'
   
 end
+gem 'default_value_for'
 gem 'devise'
 gem 'faker'
 
@@ -70,3 +71,5 @@ gem 'omniauth-facebook'
 #image uploader
 gem 'carrierwave'
 gem 'rmagick'
+
+gem 'pusher'

@@ -62,4 +62,6 @@ class BlogsController < ApplicationController
     def set_blog
       @blog = Blog.find(params[:id])
     end
+    
+    
 end

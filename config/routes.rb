@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'notifications/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   devise_for :users, controllers: { 
@@ -7,7 +9,25 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks" 
 }
   
-  resources :users, only: [:index]
+  resources :users, only: [:index, :show, :edit, :update] do
+    resources :tasks
+    resources :notifications, only: [:index]
+    resources :submit_requests , shallow: true do
+      get 'approve'
+      get 'unapprove'
+      get 'reject'
+      collection do
+        get 'inbox'
+      end
+    end
+  end
+  
+  resources :conversations do
+    resources :messages
+  end
+  
+  
+  resources :relationships, only: [:create, :destroy]
 
   
   resources :blogs do

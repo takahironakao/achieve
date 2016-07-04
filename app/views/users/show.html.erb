@@ -1,2 +1,29 @@
-
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+<%= @user.name %>
+<br>
+<strong>フォロー<strong>
+  <br>
+<% @followed.each do |user| %>
+<div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+  <%= user.name %>
+  <%= profile_img(user) %>
+  <%= user.email %>
+  <%= render 'users/mypages/follow_form', user: user %>
+  </div>
+<% end %>
+</div>
+<br>
+<br>
+<div class="container">
+<strong>フォロワー<strong>
+  <br>
+  <br>
+<% @follower.each do |user| %>
+<div class="container-child col-md-2 col-sm-4 col-xs-6 ">
+  <%= user.name %>
+  <%= profile_img(user) %>
+  <%= user.email %>
+  <%= render 'users/mypages/follow_form', user: user %>
+</div>
+<% end %>
+</div>
